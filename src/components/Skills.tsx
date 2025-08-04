@@ -2,61 +2,62 @@ import React from 'react';
 
 const Skills = () => {
   const skillCategories = [
-    {
-      title: "Frontend",
-      skills: [
-        { name: "React.js", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Next.js", level: 80 },
-        { name: "Tailwind CSS", level: 90 },
-        { name: "JavaScript", level: 90 },
-      ]
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Spring Boot", level: 85 },
-        { name: "Java", level: 85 },
-        { name: "REST APIs", level: 90 },
-        { name: "JDBC", level: 80 },
-        { name: "MySQL", level: 80 },
-      ]
-    },
-    {
-      title: "AI & Tools",
-      skills: [
-        { name: "OpenAI GPT-4", level: 85 },
-        { name: "Whisper AI", level: 75 },
-        { name: "n8n Automation", level: 70 },
-        { name: "Git", level: 85 },
-        { name: "Figma", level: 75 },
-      ]
-    },
-    {
-      title: "No-Code Automation",
-      highlight: true,
-      skills: [
-        {
-          name: "n8n Automation",
-          level: 80,
-          videos: [
-            {
-              title: "Student Support AI Agent",
-              url: "https://drive.google.com/file/d/1iOj2nHrqmxJpnmV2weMLC7fj1zMZLg6q/view?usp=sharing"
-            },
-            {
-              title: "AskAI",
-              url: "https://drive.google.com/file/d/1GaNtdxCgMmpXUSsXE3Nf8PXLS4rIrhSJ/view?usp=sharing"
-            },
-            {
-              title: "Youtube Video Summarizer",
-              url: "https://drive.google.com/file/d/13pB-0xCFX9VVBKCicZG2XE8dJSGWA-52/view?usp=sharing"
-            }
-          ]
-        }
-      ]
-    }
-  ];
+  {
+    title: "No-Code Automation",
+    highlight: true,
+    skills: [
+      {
+        name: "n8n Automation",
+        level: 80,
+        videos: [
+          {
+            title: "Student Support AI Agent",
+            url: "https://drive.google.com/file/d/1iOj2nHrqmxJpnmV2weMLC7fj1zMZLg6q/view?usp=sharing"
+          },
+          {
+            title: "AskAI",
+            url: "https://drive.google.com/file/d/1GaNtdxCgMmpXUSsXE3Nf8PXLS4rIrhSJ/view?usp=sharing"
+          },
+          {
+            title: "Youtube Video Summarizer",
+            url: "https://drive.google.com/file/d/13pB-0xCFX9VVBKCicZG2XE8dJSGWA-52/view?usp=sharing"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: "Frontend",
+    skills: [
+      { name: "React.js", level: 90 },
+      { name: "TypeScript", level: 85 },
+      { name: "Next.js", level: 80 },
+      { name: "Tailwind CSS", level: 90 },
+      { name: "JavaScript", level: 90 },
+    ]
+  },
+  {
+    title: "Backend",
+    skills: [
+      { name: "Spring Boot", level: 85 },
+      { name: "Java", level: 85 },
+      { name: "REST APIs", level: 90 },
+      { name: "JDBC", level: 80 },
+      { name: "MySQL", level: 80 },
+    ]
+  },
+  {
+    title: "AI & Tools",
+    skills: [
+      { name: "OpenAI GPT-4", level: 85 },
+      { name: "Whisper AI", level: 75 },
+      { name: "n8n Automation", level: 70 },
+      { name: "Git", level: 85 },
+      { name: "Figma", level: 75 },
+    ]
+  }
+];
+
 
   return (
     <section id="skills" className="py-20">
