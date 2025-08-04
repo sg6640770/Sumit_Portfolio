@@ -31,6 +31,30 @@ const Skills = () => {
         { name: "Git", level: 85 },
         { name: "Figma", level: 75 },
       ]
+    },
+    {
+      title: "No-Code Automation",
+      highlight: true,
+      skills: [
+        {
+          name: "n8n Automation",
+          level: 80,
+          videos: [
+            {
+              title: "Student Support AI Agent",
+              url: "https://drive.google.com/file/d/1iOj2nHrqmxJpnmV2weMLC7fj1zMZLg6q/view?usp=sharing"
+            },
+            {
+              title: "AskAI",
+              url: "https://drive.google.com/file/d/1GaNtdxCgMmpXUSsXE3Nf8PXLS4rIrhSJ/view?usp=sharing"
+            },
+            {
+              title: "Youtube Video Summarizer",
+              url: "https://drive.google.com/file/d/13pB-0xCFX9VVBKCicZG2XE8dJSGWA-52/view?usp=sharing"
+            }
+          ]
+        }
+      ]
     }
   ];
 
@@ -47,35 +71,62 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (
-            <div 
+            <div
               key={category.title}
-              className="bg-slate-800/50 p-8 rounded-lg border border-slate-700 hover:border-blue-500 transition-all duration-300"
+              className={`relative p-8 rounded-lg border transition-all duration-300 ${
+                category.highlight
+                  ? "border-blue-500 shadow-lg shadow-blue-500/30 animate-pulse"
+                  : "bg-slate-800/50 border-slate-700 hover:border-blue-500"
+              }`}
             >
               <h3 className="text-2xl font-bold mb-6 text-center text-blue-400">
                 {category.title}
               </h3>
-              
-              <div className="space-y-4">
+
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="skill-item">
+                  <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-white font-medium">{skill.name}</span>
                       <span className="text-gray-400 text-sm">{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
-                      <div 
+                    <div className="w-full bg-slate-700 rounded-full h-2 mb-2">
+                      <div
                         className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
+                        style={{
                           width: `${skill.level}%`,
                           animationDelay: `${(categoryIndex * 100) + (skillIndex * 100)}ms`
                         }}
                       ></div>
                     </div>
+
+                    {/* Video Links */}
+                    {skill.videos && (
+                      <div className="mt-3 space-y-2">
+                        {skill.videos.map((video, i) => (
+                          <a
+                            key={i}
+                            href={video.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-sm text-blue-400 hover:underline hover:text-blue-300 transition"
+                          >
+                            🎥 {video.title}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
+
+              {category.title === "No-Code Automation" && (
+                <p className="text-sm text-gray-300 mt-6 text-center">
+                  ⚡ Learn n8n with real workflows, webhook triggers, and OpenAI integrations.
+                </p>
+              )}
             </div>
           ))}
         </div>
